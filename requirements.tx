@@ -1,10 +1,10 @@
-pandas
 numpy
+pandas
+joblib
+pickle
+streamlit
 scikit-learn
 scipy
 seaborn
 matplotlib
 umap-learn
-joblib
-streamlit
-pickle
