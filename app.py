@@ -56,8 +56,9 @@ region_group = region_options.index(region_group_input) / (len(region_options) -
 content_group = content_options.index(content_group_input) / (len(content_options) - 1)
 
 if st.button("Prediksi"):
-    input_numerik = np.array([[views, likes, shares, comments, hashtag_group, region_group, content_group]])
-    input_scaled = scaler.transform(input_numerik)
+    input_df = pd.DataFrame([[views, likes, shares, comments, hashtag_group, region_group, content_group]],
+    columns=["Views", "Likes", "Shares", "Comments", "Hashtag_Group", "Region_Group", "Content_Group"])
+    input_scaled = scaler.transform(input_df)
 
     input_final = np.concatenate(([platform], input_scaled[0])).reshape(1, -1)
     input_selected = input_final[:, selected_indices]
