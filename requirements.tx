@@ -7,3 +7,4 @@ matplotlib
 umap-learn
 joblib
 streamlit
+pickle
